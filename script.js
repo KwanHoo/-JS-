@@ -154,3 +154,101 @@ const player4 = {
 
 console.log(player4.name);
 player4.sayHello('lynn');
+
+//* recep  tesk
+const calculator = {
+    add: function(a, b){
+        console.log(a + b);
+    },
+    minus: function(a, b){
+        console.log(a - b);
+    },
+    divide: function(a, b){
+        console.log(a / b);
+    },
+    times: function(a, b){
+        console.log(a * b);
+    },
+    power: function(a, b){
+        console.log(a ** b);
+    }
+}
+
+calculator.add(1,2);
+calculator.minus(1,2);
+calculator.divide(1,2);
+calculator.times(1,2);
+calculator.power(1,2);
+
+//* return ex1
+const calculator2 = {
+    add: function(a, b){
+        alert(a + b);
+    },
+    minus: function(a, b){
+        alert(a - b);
+    },
+    divide: function(a, b){
+        alert(a / b);
+    },
+    times: function(a, b){
+        alert(a * b);
+    },
+    power: function(a, b){
+        alert(a ** b);
+    }
+}
+
+console.log(calculator.add(1,2)); // undefined
+// calculator2.minus(1,2);
+// calculator2.divide(1,2);
+// calculator2.times(1,2);
+// calculator2.power(1,2);
+
+
+//* return ex2
+const age = 96;
+function calculateKrAge(ageOfforeigner){
+    ageOfforeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+console.log(krAge);  //! undefined??
+//* return!!!
+
+
+//* return ex3
+const age1 = 96;
+function calculateKrAge2(ageOfforeigner){
+    return ageOfforeigner + 2;
+}
+
+const krAge1 = calculateKrAge2(age1);
+console.log(krAge1); 
+
+
+//* return ex3
+const calculator3 = {
+    add: function(a, b){
+        return(a + b);
+    },
+    minus: function(a, b){
+        return(a - b);
+    },
+    divide: function(a, b){
+        return(a / b);
+    },
+    times: function(a, b){
+        return(a * b);
+    },
+    power: function(a, b){
+        return(a ** b);
+    }
+}
+
+
+const plusResult = calculator3.plus(2,3);  //5
+const minusResult = calculator3.minus(plusReuslt, 10); // -5
+const timeResult = calculator3.times(10, minusResult); // -50
+const divideResult = calculator3.divide(timeResult, plusResult); // -10
+const powerResult = calculator3.power(divideResult, minusResult);
