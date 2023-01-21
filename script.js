@@ -16,3 +16,15 @@ console.log(x / 100);
 const myName = "mori";
 
 console.log("hello " + myName);
+
+//* boolean
+//* true false null undefined
+
+const amIFat = true;
+console.log(amIFat);
+
+const empNo = null;
+let somethingNum; // undefiend
+console.log(empNo);
+
+console.log(somethingNum);
