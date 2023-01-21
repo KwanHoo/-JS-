@@ -96,7 +96,7 @@ console.log(player3["points"]);
 //-> 에러는 상수 전체를 하나의 값으로서 업데이트 하려고 할 떄 발생하게 됨
 
 player3.fat = false; //add
-player3.points = 3000;
+player3.points = 3000; //update
 console.log(player3);
 
 
@@ -106,3 +106,51 @@ console.log(player3);
 //* player3 = false;
 //* console.log(player3); -> error 메세지 출력됨
 
+
+//* function
+// None function...
+console.log("Hello my name is mori0");
+console.log("Hello my name is mori1");
+console.log("Hello my name is mori2");
+console.log("Hello my name is mori3");
+console.log("Hello my name is mori4");
+console.log("Hello my name is mori5");
+
+
+//* 코드의 반복을 줄여보자!!
+
+function sayHello(test){
+    console.log("Hello my name is " + test)
+};
+sayHello('mori7');
+
+
+function orderHam(menu, sizeupAv, takeOutAv){
+    console.log("주문하신 "+ menu + "사이즈 "+sizeupAv +"이시고 " + takeOutAv+" 주문맞으신가요?" )
+};
+
+orderHam('와퍼','기본','포장');
+orderHam('베이컨토마토디럭스', '라지', '매장');
+
+
+function plus(firstNum, secondNum){
+    console.log(firstNum + secondNum);
+}
+
+function divide(a, b){
+    console.log(a / b);
+}
+
+plus(200, 300);
+divide(35, 7);
+
+
+const player4 = {
+    name: 'mori',
+    sayHello: function(otherPersonsName){
+        console.log('Hello!'+otherPersonsName);
+    }
+}
+
+console.log(player4.name);
+player4.sayHello('lynn');
