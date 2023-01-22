@@ -288,7 +288,21 @@ console.log(isNaN(age_test)); // true
 
 // if ((typeof age_test) == NaN){
 if (isNaN(age_test)){
-    const age_test2 = parseInt(prompt("Please input Number only... How old are you??"));
+    const age_test2 = parseInt(prompt("Please write a Number... How old are you??"));
     console.log(age_test2);
+}else{
+    console.log('Thank you for writing your age.');
 }
+
+
+//* isNaN -> boolean type으로 아웃풋 return 
+
+// if(conditon){
+    /// condition === true
+//} else {
+    /// condition === false
+//}
+
+
+
 
