@@ -247,8 +247,48 @@ const calculator3 = {
 }
 
 
-const plusResult = calculator3.plus(2,3);  //5
-const minusResult = calculator3.minus(plusReuslt, 10); // -5
+const plusResult = calculator3.add(2,3);  //5
+const minusResult = calculator3.minus(plusResult, 10); // -5
 const timeResult = calculator3.times(10, minusResult); // -50
 const divideResult = calculator3.divide(timeResult, plusResult); // -10
 const powerResult = calculator3.power(divideResult, minusResult);
+
+
+//*  Conditionals
+// if i can drink or not??
+// how old?
+
+//const age_ex = prompt("How old are you?"); // new window 
+// js를 일시 정지 시키게 됨 <---- waiting for us
+
+// 입력되는 타입을 확인하면 string
+
+//console.log(age_ex);
+//console.log(typeof age_ex) // string
+
+console.log(typeof parseInt("15"), typeof "15");
+
+console.log(parseInt('test')); //Nan
+
+//
+const age_test = parseInt(prompt("How old are you??"));
+//const age_test = prompt("How old are you??");
+
+console.log('first'); 
+console.log(age_test); // NaN
+console.log('here');
+console.log(typeof age_test); // number
+//if age is not a number??
+console.log(age_test == NaN); // false
+console.log(age_test != NaN); // true
+console.log(age_test == 'NaN'); // false
+console.log(age_test != 'NaN'); // true
+console.log('isNaN testing');
+console.log(isNaN(age_test)); // true
+
+// if ((typeof age_test) == NaN){
+if (isNaN(age_test)){
+    const age_test2 = parseInt(prompt("Please input Number only... How old are you??"));
+    console.log(age_test2);
+}
+
