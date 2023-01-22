@@ -287,11 +287,21 @@ console.log('isNaN testing');
 console.log(isNaN(age_test)); // true
 
 // if ((typeof age_test) == NaN){
-if (isNaN(age_test)){
+if (isNaN(age_test) || age_test < 0){
     const age_test2 = parseInt(prompt("Please write a Number... How old are you??"));
     console.log(age_test2);
-}else{
+}else if(age_test < 18){
+    console.log('You are too young.');
     console.log('Thank you for writing your age.');
+}else if(age_test >=18 && age_test <= 50){
+    console.log('You can drink');
+}else if(age_test >50 && age_test <= 80){
+    console.log("You should exercise");
+}else if(age_test === 100){
+    console.log('Wow you are wise');
+}
+else{
+    console.log("You can do what ever you want");
 }
 
 
