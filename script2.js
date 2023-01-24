@@ -41,6 +41,28 @@ function handleMouseLeave(){
 
 }
 
-title5_1.addEventListener("click", handleTitleClick);
-title5_1.addEventListener("mouseenter", handleMouseEnter)
-title5_1.addEventListener("mouseleave", handleMouseLeave)
+//title5_1.addEventListener("click", handleTitleClick);
+title5_1.onclick = handleTitleClick;
+// title5_1.addEventListener("mouseenter", handleMouseEnter)
+title5_1.onmouseenter = handleMouseEnter;
+// title5_1.addEventListener("mouseleave", handleMouseLeave)
+title5_1.onmouseleave = handleMouseLeave;
+
+
+function handleWindowResize(){
+    document.body.style.backgroundColor = "tomato";
+}
+function handleWindowCopy(){
+    alert("copier!!");
+}
+function handleWindowOffline(){
+    alert("SOS no WIFI");
+}
+function handleWinodwOnline(){
+    alert("ALL GOOODDDDD");
+}
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
