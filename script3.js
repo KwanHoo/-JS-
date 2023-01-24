@@ -38,6 +38,7 @@ function onLoginSubmit(event){
     loginForm.classList.add(HIDDEN_CLASSNAME);
     console.log(username);
     // greeting.innerText = "Hello " + username;
+    localStorage.setItem("username", username);
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 
