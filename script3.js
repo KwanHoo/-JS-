@@ -7,7 +7,7 @@
 const loginForm = document.querySelector("#login-form")
 const loginInput = document.querySelector("#login-form input");
 // const loginButton = document.querySelector("#login-form button");
-
+const link = document.querySelector("a");
 
 function handleBtnClick(){
     // console.dir(loginInput.value);
@@ -35,5 +35,13 @@ function onLoginSubmit(event){
 
 }
 
+function handleLinkClick(event){
+    console.log(event);
+    console.dir(event);
+    event.preventDefault();
+    alert("clicked"); //! alert은 모든 동작을 막음! (그래서 이제 아무도 사용을 하지 않음)
+}
+
 // loginButton.addEventListener("click", handleBtnClick)
-loginForm.addEventListener("submit", onLoginSubmit)
+loginForm.addEventListener("submit", onLoginSubmit);
+link.addEventListener("click", handleLinkClick);
