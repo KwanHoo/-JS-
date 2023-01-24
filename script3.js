@@ -11,6 +11,7 @@ const link = document.querySelector("a");
 const greeting = document.querySelector("#greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username"
 
 function handleBtnClick(){
     // console.dir(loginInput.value);
@@ -38,9 +39,10 @@ function onLoginSubmit(event){
     loginForm.classList.add(HIDDEN_CLASSNAME);
     console.log(username);
     // greeting.innerText = "Hello " + username;
-    localStorage.setItem("username", username);
-    greeting.innerText = `Hello ${username}`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    localStorage.setItem(USERNAME_KEY, username);
+    // greeting.innerText = `Hello ${username}`;
+    // greeting.classList.remove(HIDDEN_CLASSNAME);
+    paintGreetings(username);
 
 }
 
@@ -52,5 +54,24 @@ function handleLinkClick(event){
 }
 
 // loginButton.addEventListener("click", handleBtnClick)
-loginForm.addEventListener("submit", onLoginSubmit);
+//loginForm.addEventListener("submit", onLoginSubmit);
 link.addEventListener("click", handleLinkClick);
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+console.log(savedUsername);
+
+function paintGreetings(userName){
+    greeting.innerText = `Hello ${userName}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+if(savedUsername === null){
+    // show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    // show the greeting
+    // greeting.innerText = `Hello ${savedUsername}`;
+    // greeting.classList.remove(HIDDEN_CLASSNAME);
+    paintGreetings(savedUsername);
+}
