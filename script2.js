@@ -22,12 +22,21 @@ console.log(title3_1);
 
 const title5_1 = document.querySelector("div#first:first-child h2");
 // console.dir(title5_1);
-title5_1.style.color = "white";
+title5_1.style.color = "tomato";
 
 function handleTitleClick(){
-    console.log("title was clicked");
-    title5_1.style.color = "red";
+    // console.log("title was clicked");
+    // title5_1.style.color = "red";
+    const currentColor = title5_1.style.color;
+    let newColor;
+    console.log(title5_1.style.color);
 
+    if(currentColor === "red"){
+        newColor = "green";
+    }else {
+        newColor  = "red";
+    }
+    title5_1.style.color = newColor;
 }
 
 
@@ -58,7 +67,7 @@ function handleWindowCopy(){
 function handleWindowOffline(){
     alert("SOS no WIFI");
 }
-function handleWinodwOnline(){
+function handleWindowOnline(){
     alert("ALL GOOODDDDD");
 }
 
