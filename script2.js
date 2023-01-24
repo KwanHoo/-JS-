@@ -63,9 +63,27 @@ function handleTitleclick2(){
     title5_1.className = titleClass;
 }
 
+//* handle~~3 과 handle~~4는 같은 결과값을 냄
+function handleTitleclick3(){
+    const cilckedClass = "active"
+    if(title5_1.classList.contains(cilckedClass)){
+        title5_1.classList.remove(cilckedClass);
+    }else {
+        title5_1.classList.add(cilckedClass);
+    }
+}
+
+// toggle 함수로 한줄로 작성 가능!!
+function handleTitleclick4(){
+    title5_1.classList.toggle("active");
+}
+
+
 //title5_1.addEventListener("click", handleTitleClick);
 // title5_1.onclick = handleTitleClick;
-title5_1.addEventListener("click", handleTitleclick2);
+// title5_1.addEventListener("click", handleTitleclick2);
+// title5_1.addEventListener("click", handleTitleclick3);
+title5_1.addEventListener("click", handleTitleclick4);
 // title5_1.addEventListener("mouseenter", handleMouseEnter)
 title5_1.onmouseenter = handleMouseEnter;
 // title5_1.addEventListener("mouseleave", handleMouseLeave)
