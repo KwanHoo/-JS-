@@ -20,3 +20,15 @@ console.log(title3_1);
 //const title4_1 = document.querySelector("#test");
 //const title4_2 = document.getElementById("test");
 
+const title5_1 = document.querySelector("div#first:first-child h2");
+// console.dir(title5_1);
+title5_1.style.color = "white";
+
+function handleTitleClick(){
+    console.log("title was clicked");
+    title5_1.style.color = "red";
+
+}
+
+title5_1.addEventListener("click", handleTitleClick);
+
