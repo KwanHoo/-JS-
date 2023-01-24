@@ -42,7 +42,7 @@ function onLoginSubmit(event){
     localStorage.setItem(USERNAME_KEY, username);
     // greeting.innerText = `Hello ${username}`;
     // greeting.classList.remove(HIDDEN_CLASSNAME);
-    paintGreetings(username);
+    paintGreetings();
 
 }
 
@@ -60,8 +60,9 @@ link.addEventListener("click", handleLinkClick);
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 console.log(savedUsername);
 
-function paintGreetings(userName){
-    greeting.innerText = `Hello ${userName}`;
+function paintGreetings(){
+    const username = localStorage.getItem(USERNAME_KEY);
+    greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -73,5 +74,5 @@ if(savedUsername === null){
     // show the greeting
     // greeting.innerText = `Hello ${savedUsername}`;
     // greeting.classList.remove(HIDDEN_CLASSNAME);
-    paintGreetings(savedUsername);
+    paintGreetings();
 }
