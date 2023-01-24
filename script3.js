@@ -1,11 +1,13 @@
 //* 방법1
 // const loginForm = document.getElementById("login-form");
-// const loginInput = loginForm.querySelector("input");
+// const loginInput = loginForm.querytinaitSelector("input");
 // const loginButton = loginForm.querySelector("button");
 
 // 방법2
+const loginForm = document.querySelector("#login-form")
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+// const loginButton = document.querySelector("#login-form button");
+
 
 function handleBtnClick(){
     // console.dir(loginInput.value);
@@ -24,5 +26,14 @@ function handleBtnClick(){
     //     console.log("good!!")
     // }
 }
+function onLoginSubmit(event){
+    event.preventDefault();
+    // console.log(event);
+    console.log(loginInput.value);
+    // const username = loginInput.value;
+    // console.log(username);
 
-loginButton.addEventListener("click", handleBtnClick)
+}
+
+// loginButton.addEventListener("click", handleBtnClick)
+loginForm.addEventListener("submit", onLoginSubmit)
