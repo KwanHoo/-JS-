@@ -17,3 +17,4 @@ bgImage.src = `img/${chosenImage}`;
 //console.log(bgImage); // <img src="img/2.jpg>"
 
 document.body.appendChild(bgImage);
+// document.body.prepend(bgImage);
