@@ -6,7 +6,11 @@ const toDoList = document.getElementById("todo-list");
 function paintToDo(newTodo){
     // console.log("I will paint ", newTodo);
     const li = document.createElement("li");
-             
+    const span = document.createElement("span");
+    li.appendChild(span);
+    span.innerText = newTodo;
+    // console.log(li);
+    toDoList.appendChild(li);
 }
 
 function handleToDOSubmit(event) {
