@@ -2,6 +2,11 @@ const toDoForm = document.getElementById("todo-form");
 const todoInput = toDoForm.querySelector("input");
 // const todoInput = document.querySelector("#todo-form input"); 둘이 동일
 const toDoList = document.getElementById("todo-list");
+const toDos = [];
+
+function saveToDos () {
+    localStorage.setItem("todos", JSON.stringify(toDos));
+}
 
 function deleteTodo(event) {
     // console.log("testing");
@@ -32,7 +37,9 @@ function handleToDOSubmit(event) {
     const newTodo = todoInput.value;
     todoInput.value = "";
     // console.log(newTodo, todoInput.value);
+    toDos.push(newTodo);
     paintToDo(newTodo);
+    saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDOSubmit);
