@@ -3,12 +3,25 @@ const todoInput = toDoForm.querySelector("input");
 // const todoInput = document.querySelector("#todo-form input"); 둘이 동일
 const toDoList = document.getElementById("todo-list");
 
+function deleteTodo(event) {
+    // console.log("testing");
+    // console.log(event.target.parentElement.innerText);
+    const li = event.target.parentElement;
+    li.remove();
+}
+
 function paintToDo(newTodo){
     // console.log("I will paint ", newTodo);
     const li = document.createElement("li");
     const span = document.createElement("span");
-    li.appendChild(span);
     span.innerText = newTodo;
+
+    const button = document.createElement("button");
+
+    button.innerText = "❌";
+    button.addEventListener("click", deleteTodo)
+    li.appendChild(span);
+    li.appendChild(button);
     // console.log(li);
     toDoList.appendChild(li);
 }
