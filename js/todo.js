@@ -14,14 +14,32 @@ function deleteTodo(event) {
     // console.log("testing");
     // console.log(event.target.parentElement.innerText);
     const li = event.target.parentElement;
+    // console.log(li.id); // id 유니크값
     li.remove();
 }
-
+//text ver
 function paintToDo(newTodo){
     // console.log("I will paint ", newTodo);
     const li = document.createElement("li");
     const span = document.createElement("span");
     span.innerText = newTodo;
+
+    const button = document.createElement("button");
+
+    button.innerText = "❌";
+    button.addEventListener("click", deleteTodo)
+    li.appendChild(span);
+    li.appendChild(button);
+    // console.log(li);
+    toDoList.appendChild(li);
+}
+//obj ver
+function paintToDo1(newTodo){
+    // console.log("I will paint ", newTodo);
+    const li = document.createElement("li");
+    li.id = newTodo.id;
+    const span = document.createElement("span");
+    span.innerText = newTodo.text;
 
     const button = document.createElement("button");
 
@@ -38,9 +56,14 @@ function handleToDOSubmit(event) {
     // console.log(todoInput.value);
     const newTodo = todoInput.value;
     todoInput.value = "";
+    const newTodoObj = {
+        text:newTodo,
+        id: Date.now() // id값으로 현재시간(유니크값)
+    }
     // console.log(newTodo, todoInput.value);
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    toDos.push(newTodoObj);
+    // paintToDo(newTodo); //text
+    paintToDo1(newTodoObj); //obj
     saveToDos();
 }
 
