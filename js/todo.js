@@ -86,3 +86,15 @@ if(savedToDos !== null){
     // parsedToDos.forEach((item) => {console.log("this is the turn of ", item) });
     parsedToDos.forEach(paintToDo);
 }
+
+//* 함수 역할
+//  true를 리턴해야 기존 배열에 포함
+// false일 경우 그 item은 새 array에 포함되지 않음
+function sexyFilter(item){
+    return item !== 3
+}
+// [1, 2, 3, 4].filter(sexyFilter);
+// sexyFilter(1);
+// sexyFilter(2);
+// sexyFilter(3) x ;
+// sexyFilter(4);
