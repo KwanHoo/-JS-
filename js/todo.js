@@ -2,7 +2,7 @@ const toDoForm = document.getElementById("todo-form");
 const todoInput = toDoForm.querySelector("input");
 // const todoInput = document.querySelector("#todo-form input"); 둘이 동일
 const toDoList = document.getElementById("todo-list");
-const toDos = [];
+let toDos = [];
 
 const TODOS_KEY = "todos";
 
@@ -57,7 +57,9 @@ console.log(savedToDos);
 
 if(savedToDos !== null){
     const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;  // remember not empty
     console.log(parsedToDos);
     //parsedToDos.forEach(sayHello);
-    parsedToDos.forEach((item) => {console.log("this is the turn of ", item) });
+    // parsedToDos.forEach((item) => {console.log("this is the turn of ", item) });
+    parsedToDos.forEach(paintToDo);
 }
