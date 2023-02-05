@@ -16,6 +16,13 @@ function deleteTodo(event) {
     const li = event.target.parentElement;
     // console.log(li.id); // id 유니크값
     li.remove();
+    // remove 된거 toDos 에서 제외됨
+    //console.log(typeof li.id) // string
+    /* toDos = toDos.filter(toDo => toDo.li !== li.id); */
+    /* toDo.li : number type / li.id : string type */
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
+    console.log(toDos);
 }
 //text ver
 function paintToDo(newTodo){
